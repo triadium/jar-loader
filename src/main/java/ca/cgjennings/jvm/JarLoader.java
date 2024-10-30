@@ -15,7 +15,7 @@ import java.util.jar.JarFile;
  * with Java 9+, your app must be started with
  * {@code -javaagent:path/to/jar-loader.jar}.
  *
- * @author Chris Jennings <https://cgjennings.ca/contact.html>
+ * @author Chris Jennings https://cgjennings.ca/contact.html
  */
 public class JarLoader {
 
@@ -67,11 +67,11 @@ public class JarLoader {
      * Returns whether the extending the class path is supported on the host
      * JRE. If this returns false, the most likely causes are:
      * <ul>
-     * <li> the manifest is not configured to load the agent or the
+     * <li>the manifest is not configured to load the agent or the
      * {@code -javaagent:jarpath} argument was not specified (Java 9+);
-     * <li> security restrictions are preventing reflective access to the class
+     * <li>security restrictions are preventing reflective access to the class
      * loader (Java &le; 8);
-     * <li> the underlying VM neither supports agents nor uses URLClassLoader as
+     * <li>the underlying VM neither supports agents nor uses URLClassLoader as
      * its system class loader (extremely unlikely from Java 1.6+).
      * </ul>
      *
@@ -91,8 +91,8 @@ public class JarLoader {
      * diagnosing client issues.
      *
      * @return returns {@code "none"} if no strategy was found, otherwise a
-     *     short describing the method used; the value {@code "reflection"}
-     *     indicates that a fallback not compatible with Java 9+ is being used
+     *         short describing the method used; the value {@code "reflection"}
+     *         indicates that a fallback not compatible with Java 9+ is being used
      */
     public static synchronized String getStrategy() {
         String strat = "none";
@@ -120,7 +120,7 @@ public class JarLoader {
      * For this to work the {@code MANIFEST.MF} file <strong>must</strong>
      * include the line {@code Premain-Class: ca.cgjennings.jvm.JarLoader}.
      *
-     * @param agentArgs agent arguments; currently ignored
+     * @param agentArgs       agent arguments; currently ignored
      * @param instrumentation provided by the JRE
      */
     public static void premain(String agentArgs, Instrumentation instrumentation) {
@@ -140,7 +140,7 @@ public class JarLoader {
      * For this to work the {@code MANIFEST.MF} file <strong>must</strong>
      * include the line {@code Agent-Class: ca.cgjennings.jvm.JarLoader}.
      *
-     * @param agentArgs agent arguments; currently ignored
+     * @param agentArgs       agent arguments; currently ignored
      * @param instrumentation provided by the JRE
      */
     public static void agentmain(String agentArgs, Instrumentation instrumentation) {
@@ -167,8 +167,7 @@ public class JarLoader {
                 }
             } else {
                 throw new UnsupportedOperationException(
-                        "did you forget -javaagent:<jarpath>?"
-                );
+                        "did you forget -javaagent:<jarpath>?");
             }
         }
         return addUrlMethod;

@@ -1,17 +1,30 @@
-nbproject/private/**
-nbproject/Makefile-*.mk
-nbproject/Package-*.bash
-.nb-gradle/
+# .Net build folders
+**/bin/
+**/obj/
+# Maven build folders
+**/target/
+**/out/
+.class
+# Python binaries
+.*/__pycache__/.*
+.*\.pyc
+# Rust
+Cargo.lock
+target/
 
-build/
-dist/
+# Visual Studio / Mono
+.suo
+.userprefs
+# IntelliJ / PyCharm
+**/.idea
+.iml
 
-# Compiled class file
-*.class
+# GEdit temp file
+*~
 
-# Log file
-*.log
+# Environment
+.vscode/
 
-# virtual machine crash logs
-hs_err_pid*
-
+# Hime test
+tests-results/
+TestResults.xml

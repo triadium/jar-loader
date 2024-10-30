@@ -22,7 +22,7 @@ Three steps:
 
 If you move the compiled `JarLoader` class to a different JAR file, it must include a `MANIFEST.MF` with the following line:
 
-`Premain-Class: ca.cgjennings.vm.JarLoader`
+`Premain-Class: ca.cgjennings.jvm.JarLoader`
 
 
 
